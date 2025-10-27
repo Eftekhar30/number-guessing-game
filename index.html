@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <div class="outbox">
+            <div id="inbox">
+            <h1>Number Guessing Game</h1>
+            <p>Guess a number between <span id="rangeText">1 and 100</span>:</p>
+
+            <div class="controls">
+                <label for="difficulty" class="visually-hidden">Difficulty</label>
+                <select id="difficulty" aria-label="Difficulty">
+                    <option value="easy">Easy (1-50)</option>
+                    <option value="medium" selected>Medium (1-100)</option>
+                    <option value="hard">Hard (1-500)</option>
+                </select>
+                <button id="hintBtn" type="button">Hint</button>
+                <button id="restartBtn" type="button" class="secondary">Play Again</button>
+            </div>
+
+            <div class="inputs">
+                <input type="number" id="guessField" inputmode="numeric" placeholder="e.g. 42">
+                <button id="submitGuess">Submit</button>
+            </div>
+
+            <div class="stats">
+                <div id="attemptsLeft">Attempts: —</div>
+                <div id="bestScore">Best: —</div>
+            </div>
+
+            <p id="message" aria-live="polite"></p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+:root{
+    --bg-overlay: rgba(0,0,0,0.45);
+    --card-bg: rgba(255,255,255,0.06);
+    --accent: #ff66c4;
+    --accent-2: #ffd24a;
+    --muted: rgba(255,255,255,0.8);
+    --glass-border: rgba(255,255,255,0.12);
+    --radius: 12px;
+    --shadow: 0 8px 30px rgba(0,0,0,0.5);
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing: border-box}
+html,body{
+    height:100%;
+    margin:0;
+    background: linear-gradient(135deg, #ff9ab3 0%, #ffd24a 100%);
+    background-size: cover;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    position:relative;
+    overflow-x: hidden;
+}
+
+body::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(120deg, rgba(255,154,179,0.06), rgba(255,210,74,0.04));
+    mix-blend-mode: overlay;
+    filter: blur(6px);
+    z-index: 0;
+    animation: gradientShift 10s linear infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradientShift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+body.bg-image{
+    background-image: linear-gradient(135deg, rgba(255,154,179,0.08), rgba(255,210,74,0.06)), url('tanvira.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px){
+    body, body.bg-image{background-attachment: scroll}
+    body::before{filter: blur(4px)}
+}
+body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    color:var(--muted);
+}
+
+.outbox{
+    width:100%;
+    max-width:1100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+#inbox{
+    width:100%;
+    max-width:480px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border:1px solid var(--glass-border);
+    border-radius:var(--radius);
+    padding:28px 26px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px) saturate(120%);
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root{
+    --bg-1: #071026;
+    --bg-2: #091123;
+    --card-bg: rgba(12,18,28,0.6);
+    --accent: #64ffda;
+    --accent-2: #9b8cff;
+    --muted: rgba(255,255,255,0.9);
+    --muted-2: rgba(255,255,255,0.7);
+    --glass-border: rgba(255,255,255,0.06);
+    --radius: 12px;
+    --shadow: 0 12px 40px rgba(2,6,23,0.7);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*{box-sizing: border-box}
+html,body{
+    height:100%;
+    margin:0;
+    background: linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    background-size: cover;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    color:var(--muted);
+}
+
+.outbox{
+    width:100%;
+    max-width:1100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+#inbox{
+    width:100%;
+    max-width:520px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid var(--glass-border);
+    border-radius:var(--radius);
+    padding:28px 26px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    background-color: var(--card-bg);
+    z-index: 2;
+}
+
+h1{
+    margin:0 0 6px 0;
+    text-align:center;
+    color:var(--accent-2);
+    font-size:1.5rem;
+    letter-spacing:0.4px;
+}
+
+#inbox > p:first-of-type{
+    margin:6px 0 14px 0;
+    color:var(--muted-2);
+    font-weight:600;
+    text-align:center;
+}
+
+.inputs{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:12px;
+}
+
+input[type="number"]{
+    width:160px;
+    padding:10px 12px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.04);
+    background: rgba(0,0,0,0.35);
+    color:var(--muted);
+    outline:none;
+    transition:box-shadow .18s ease, transform .12s ease, border-color .12s ease;
+}
+
+input[type="number"]::placeholder{color: rgba(255,255,255,0.45)}
+
+input[type="number"]:focus{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 0 4px rgba(100,255,218,0.06);
+    transform:translateY(-1px);
+    border-color: rgba(100,255,218,0.4);
+}
+
+button#submitGuess{
+    padding:9px 14px;
+    border-radius:8px;
+    border:none;
+    background: linear-gradient(180deg, rgba(100,255,218,0.14), rgba(155,140,255,0.12));
+    color:#071026;
+    font-weight:700;
+    cursor:pointer;
+    transition:transform .12s ease, filter .12s ease, box-shadow .12s ease;
+}
+
+button#submitGuess:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.03);
+    box-shadow: 0 8px 26px rgba(2,6,23,0.6);
+}
+
+#message{
+    margin:10px 0 0 0;
+    text-align:center;
+    padding:10px 12px;
+    border-radius:8px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+    color:var(--muted-2);
+    font-weight:600;
+    min-height:34px;
+}
+
+@media (max-width:480px){
+    #inbox{padding:18px 14px}
+    input[type="number"]{width:120px}
+    h1{font-size:1.2rem}
+}
+
+button:focus, input:focus{outline:3px solid rgba(100,255,218,0.06); outline-offset:2px}
+
+#inbox p{margin:0}
+
+.controls{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    align-items:center;
+    margin:8px 0 16px 0;
+    flex-wrap:wrap;
+}
+.controls select{
+    padding:8px 10px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.04);
+    background: rgba(0,0,0,0.35);
+    color:var(--muted);
+    min-width:140px;
+}
+.controls button{
+    padding:8px 12px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+    background:transparent;
+    color:var(--muted-2);
+    font-weight:600;
+}
+.controls .secondary{
+    border:1px solid rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.02);
+}
+
+button#submitGuess{
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    color: #061026;
+    padding:10px 16px;
+    font-weight:700;
+    border-radius:10px;
+    box-shadow: 0 8px 22px rgba(27,58,53,0.35), inset 0 -2px 6px rgba(0,0,0,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+button#submitGuess:active{transform:translateY(0)}
+
+.inputs{margin:6px 0 6px 0}
+
+.stats{display:flex;gap:10px;justify-content:center;margin-top:8px;color:var(--muted-2);font-weight:600}
+
+@media (max-width:420px){
+    .controls{gap:6px}
+    .controls select{min-width:120px}
+    .inputs{flex-direction:column;gap:8px}
+    input[type="number"]{width:100%;max-width:240px}
+    button#submitGuess{width:100%;max-width:160px}
+}
+
